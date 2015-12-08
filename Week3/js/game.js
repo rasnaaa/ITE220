@@ -62,7 +62,7 @@ var game = {
 		// Number 0
 		var ele = document.getElementById("zero");
 		ele.addEventListener("click", function(){
-			self.click(0);
+			self.click(0); 
 		}, false);
 
 		//Clear
@@ -90,10 +90,10 @@ var game = {
 		userValueEle.value += value;
 	},
 	checkAnswer: function(value) {
-		if (check.value == self.answer){alert("That is correct! Congratulations!");}
-			else { 
-				alert("This is not correct! Try again.");
-			}
+		if (check.value > self.answer){ alert("That is too high! Try again.");}
+		else if (check.value < self.answer) {alert("That is too low! Try again.");}
+		else if (check.value == self.answer){alert("That is correct! Congratulations!");}
+			else {}
 	}
 };
 
