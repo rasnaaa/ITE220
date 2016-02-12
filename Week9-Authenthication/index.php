@@ -20,15 +20,27 @@
     <div class="container">
       <div class="card"></div>
       <div class="card">
+        <div class="input-container">
+         <label for="error">
+             <?php
+              if(isset($_GET['q'])){
+                $error = $_GET['q'];
+                if($error == "error"){
+                  echo "Invalid username or password";
+                }  
+              }
+             ?>
+         </label>
+        </div>
         <h1 class="title">Login</h1>
-        <form>
+        <form action="action.php?q=login" method="POST">
           <div class="input-container">
-            <input type="text" id="login-username" required="required"/>
+            <input type="text" name="login-username" required="required"/>
             <label for="Username">Username</label>
             <div class="bar"></div>
           </div>
           <div class="input-container">
-            <input type="password" id="login-password" required="required"/>
+            <input type="password" name="login-password" required="required"/>
             <label for="Password">Password</label>
             <div class="bar"></div>
           </div>
@@ -42,19 +54,19 @@
         <h1 class="title">Register
           <div class="close"></div>
         </h1>
-        <form>
+        <form action="action.php?q=register" method="POST">
           <div class="input-container">
-            <input type="text" id="register-username" required="required"/>
+            <input type="text" name="register-username" required="required"/>
             <label for="Username">Username</label>
             <div class="bar"></div>
           </div>
           <div class="input-container">
-            <input type="password" id="register-password" required="required"/>
+            <input type="password" name="register-password" required="required"/>
             <label for="Password">Password</label>
             <div class="bar"></div>
           </div>
           <div class="input-container">
-            <input type="password" id="register-repeat-password" required="required"/>
+            <input type="password" name="register-repeat-password" required="required"/>
             <label for="Repeat Password">Repeat Password</label>
             <div class="bar"></div>
           </div>

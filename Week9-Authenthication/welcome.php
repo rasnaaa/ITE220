@@ -1,5 +1,9 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html >
+
   <head>
     <meta charset="UTF-8">
     <title>Material Login Form</title>
@@ -22,8 +26,11 @@
       <div class="card">
         <h1 class="title">
           Welcome !
+          <?php
+              echo $_SESSION["username"];
+          ?>
         </h1>
-        <form>
+        <form action="action.php?q=logout" method="POST">
          <br/><br/><br/>
           <div class="button-container">
             <button><span>Logout</span></button>
